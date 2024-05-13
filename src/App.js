@@ -1,5 +1,6 @@
 import React from "react";
-import Modal from "./Modal";
+import Modal from "@material-ui/core/Modal";
+ 
 export default function App() {
     const [open, setOpen] = React.useState(false);
  
@@ -21,18 +22,34 @@ export default function App() {
             }}
         >
             <h1 style={{ color: "SpringGreen" }}>
-                Intain
+               Intain
             </h1>
-            <h4>Future of Structured Finance is Digital!</h4>
+            <h4 style={{color: "Blue"}}>
+              Future of Structured Finance is Digital!</h4>
             <button type="button" onClick={handleOpen}>
-                Open Modal
+                Click to Open Modal
             </button>
-            <Modal isOpen={open} onClose={handleClose}>
+            <Modal
+                onClose={handleClose}
+                open={open}
+                style={{
+                    position: "absolute",
+                    border: "2px solid #000",
+                    backgroundColor: "lightgray",
+                    boxShadow: "2px solid black",
+                    height: 150,
+                    width: 240,
+                    margin: "auto",
+                    padding: "2%",
+                    color: "white",
+                }}
+            >
                 <>
-                    <h1 style={{ color: "SpringGreen" }}>
+                    <h2 style={{ color: "SpringGreen" }}>
                       Intain
-                      </h1>
-                    <h3>Future of Structured Finance is Digital!</h3>
+                      </h2>
+                    <p style={{color: "Blue"}}>
+                      Future of Structured Finance is Digital!</p>
                 </>
             </Modal>
         </div>
